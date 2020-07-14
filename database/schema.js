@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Int32 } = require('mongodb');
+const { Int32, Timestamp } = require('mongodb');
 
 // const KeyValueSchema = new mongoose.Schema(
 //   {
@@ -28,6 +28,7 @@ const SurveySchema = new mongoose.Schema(
     appDate: {type: Date},
     appComment: {type: String},
   },
+  { timestamps: true },
 );
 
 

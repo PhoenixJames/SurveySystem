@@ -15,11 +15,11 @@ const getAllSurvey = async function(req, res) {
 
 const getSurveyByCode = async function(req, res) {
   const { code } = req.params;
-  let ret = await Survey.find({code: parseInt(code, 10)});
+  let ret = await Survey.findOne({code: parseInt(code, 10)});
   if (ret) {
-    return res.status(200).send(ret);
+    return res.status(200).json(ret);
   }
-  return res.status(404).send('error');
+  return res.status(404).json('error');
 }
 
 const createSurvey = function(req, res) {
