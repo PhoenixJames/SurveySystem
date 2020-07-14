@@ -17,7 +17,9 @@ app.use(bodyParser.json());
 // Routes
 var keyValueRoute = require('./routes/KeyValueRoute');
 var SurveyRoute = require('./routes/SurveyRoute');
+var UserRoute = require('./routes/UserRoute');
 app.use('/api/survey', SurveyRoute);
+app.use('/api/user', UserRoute);
 
 app.use(function(req, res, next) {
   next(createError(404));

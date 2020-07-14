@@ -31,9 +31,19 @@ const SurveySchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+const UserSchema = new mongoose.Schema(
+  {
+    username: { type: String},
+    password: { type: String},
+  },
+  { timestamps: true },
+);
+
 
 const Survey = mongoose.model('survey', SurveySchema);
+const User = mongoose.model('user', UserSchema);
 
 module.exports = {
   Survey,
+  User,
 };
