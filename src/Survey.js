@@ -13,6 +13,14 @@ const getAllSurvey = async function(req, res) {
   return res.status(404).send('error');
 }
 
+const getAllFilledSurvey = async function(req, res) {
+  let ret = await Survey.find({web: { $ne: null }});
+  if (ret) {
+    return res.status(200).send(ret);
+  }
+  return res.status(404).send('error');
+}
+
 const getSurveyByCode = async function(req, res) {
   const { code } = req.params;
   let ret = await Survey.findOne({code: parseInt(code, 10)});
@@ -55,6 +63,9 @@ const updateSurvey = async function(req, res) {
     web,
     webDate,
     webComment,
+    web2,
+    webDate2,
+    webComment2,
     ppi,
     ppiDate,
     ppiComment,
@@ -71,6 +82,9 @@ const updateSurvey = async function(req, res) {
       web: Boolean(web),
       webDate: new Date(webDate),
       webComment,
+      web2: Boolean(web2),
+      webDate2: new Date(webDate2),
+      webComment2,
       ppi: Boolean(ppi),
       ppiDate,
       ppiComment,
@@ -91,4 +105,5 @@ module.exports = {
   createSurvey,
   updateSurvey,
   getSurveyByCode,
+  getAllFilledSurvey,
 };
