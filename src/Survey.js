@@ -73,27 +73,60 @@ const updateSurvey = async function(req, res) {
     appDate,
     appComment,
   } = req.body;
+  let ret;
   // let ret = await Survey.findOne({ code: 1});
-  let ret = await Survey.findOneAndUpdate(
-    {
-      code: code,
-    },
-    {
-      web: Boolean(web),
-      webDate: new Date(webDate),
-      webComment,
-      web2: Boolean(web2),
-      webDate2: new Date(webDate2),
-      webComment2,
-      ppi: Boolean(ppi),
-      ppiDate,
-      ppiComment,
-      app: Boolean(app),
-      appDate,
-      appComment,
-    },
-    {new: true}
-  )
+  if (web != null) {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        web: Boolean(web),
+        webDate: new Date(webDate),
+        webComment,
+      },
+      {new: true}
+    )
+  }
+  if (web2 != null) {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        web2: Boolean(web2),
+        webDate2: new Date(webDate2),
+        webComment2,
+      },
+      {new: true}
+    )
+  }
+  if (ppi != null) {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        ppi: Boolean(ppi),
+        ppiDate,
+        ppiComment,
+      },
+      {new: true}
+    )
+  }
+  if (app != null) {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        app: Boolean(app),
+        appDate: new Date(appDate),
+        appComment,
+      },
+      {new: true}
+    )
+  }
   if(ret) {
     return res.status(200).send(ret);
   }
