@@ -10,11 +10,11 @@ const userLogin = async function(req, res) {
     username,
     password,
   } = req.body;
-  const ret = await User.find({username, password});
-  if (ret.length > 0) {
-    return res.status(200).send(true);
+  const ret = await User.findOne({username, password});
+  if (ret != null) {
+    return res.status(200).send(ret);
   } else {
-    return res.status(200).send(false);
+    return res.status(200).send(ret);
   }
 }
 

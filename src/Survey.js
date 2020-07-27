@@ -72,6 +72,7 @@ const updateSurvey = async function(req, res) {
     app,
     appDate,
     appComment,
+    username,
   } = req.body;
   let ret;
   // let ret = await Survey.findOne({ code: 1});
@@ -84,6 +85,7 @@ const updateSurvey = async function(req, res) {
         web: Boolean(web),
         webDate: new Date(webDate),
         webComment,
+        username,
       },
       {new: true}
     )
@@ -97,6 +99,7 @@ const updateSurvey = async function(req, res) {
         web2: Boolean(web2),
         webDate2: new Date(webDate2),
         webComment2,
+        username,
       },
       {new: true}
     )
@@ -108,8 +111,9 @@ const updateSurvey = async function(req, res) {
       },
       {
         ppi: Boolean(ppi),
-        ppiDate,
+        ppiDate: new Date(ppiDate),
         ppiComment,
+        username,
       },
       {new: true}
     )
@@ -123,6 +127,7 @@ const updateSurvey = async function(req, res) {
         app: Boolean(app),
         appDate: new Date(appDate),
         appComment,
+        username,
       },
       {new: true}
     )

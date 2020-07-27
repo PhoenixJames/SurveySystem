@@ -30,7 +30,7 @@ const SurveySchema = new mongoose.Schema(
     app: {type: Boolean},
     appDate: {type: Date},
     appComment: {type: String},
-    userId: {type: String},
+    username: {type: String},
   },
   { timestamps: true },
 );
