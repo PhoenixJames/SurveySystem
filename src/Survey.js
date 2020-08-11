@@ -89,6 +89,19 @@ const updateSurvey = async function(req, res) {
       },
       {new: true}
     )
+  } else {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        web: null,
+        webDate: null,
+        webComment: null,
+        username,
+      },
+      {new: true}
+    )
   }
   if (web2 != null) {
     ret = await Survey.findOneAndUpdate(
@@ -99,6 +112,19 @@ const updateSurvey = async function(req, res) {
         web2: Boolean(web2),
         webDate2: new Date(webDate2),
         webComment2,
+        username,
+      },
+      {new: true}
+    )
+  } else {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        web2: null,
+        webDate2: null,
+        webComment2: null,
         username,
       },
       {new: true}
@@ -117,6 +143,19 @@ const updateSurvey = async function(req, res) {
       },
       {new: true}
     )
+  } else {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        ppi: null,
+        ppiDate: null,
+        ppiComment: null,
+        username,
+      },
+      {new: true}
+    )
   }
   if (app != null) {
     ret = await Survey.findOneAndUpdate(
@@ -127,6 +166,19 @@ const updateSurvey = async function(req, res) {
         app: Boolean(app),
         appDate: new Date(appDate),
         appComment,
+        username,
+      },
+      {new: true}
+    )
+  } else {
+    ret = await Survey.findOneAndUpdate(
+      {
+        code: code,
+      },
+      {
+        app: null,
+        appDate: null,
+        appComment: null,
         username,
       },
       {new: true}
