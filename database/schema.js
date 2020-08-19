@@ -31,6 +31,8 @@ const SurveySchema = new mongoose.Schema(
     appDate: {type: Date},
     appComment: {type: String},
     username: {type: String},
+    nrc: {type: String},
+    phone: {type: String},
   },
   { timestamps: true },
 );

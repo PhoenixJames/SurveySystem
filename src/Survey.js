@@ -73,6 +73,8 @@ const updateSurvey = async function(req, res) {
     appDate,
     appComment,
     username,
+    nrc,
+    phone,
   } = req.body;
   let ret;
   // let ret = await Survey.findOne({ code: 1});
@@ -86,6 +88,8 @@ const updateSurvey = async function(req, res) {
         webDate: new Date(webDate),
         webComment,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -99,6 +103,8 @@ const updateSurvey = async function(req, res) {
         webDate: null,
         webComment: null,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -113,6 +119,8 @@ const updateSurvey = async function(req, res) {
         webDate2: new Date(webDate2),
         webComment2,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -126,6 +134,8 @@ const updateSurvey = async function(req, res) {
         webDate2: null,
         webComment2: null,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -140,6 +150,8 @@ const updateSurvey = async function(req, res) {
         ppiDate: new Date(ppiDate),
         ppiComment,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -153,6 +165,8 @@ const updateSurvey = async function(req, res) {
         ppiDate: null,
         ppiComment: null,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -167,6 +181,8 @@ const updateSurvey = async function(req, res) {
         appDate: new Date(appDate),
         appComment,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
@@ -180,6 +196,8 @@ const updateSurvey = async function(req, res) {
         appDate: null,
         appComment: null,
         username,
+        nrc,
+        phone,
       },
       {new: true}
     )
